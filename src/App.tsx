@@ -1,8 +1,13 @@
 import React from 'react';
+import Home from './pages';
+import Global from './styles/global';
 
 function App() {
   return (
-    <div>Projeto Limpo</div>
+    <>
+      <Global/>
+      <Home/>
+    </>
   );
 }
 
