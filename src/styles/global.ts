@@ -7,11 +7,13 @@ const Global = createGlobalStyle`
         --white-2: 	#ffffff;
 		--gray-0: 	#cecece;
         --gray-1: 	#656565;
+		--gray-2: 	#dde6e9;
         --black: 	#000000;
         --blue-0: 	#D1DCE3;
-        --blue-1:  rgba(209, 220, 227, 0.18);
+        --blue-1:  	rgba(209, 220, 227, 0.18);
         --blue-2: 	#3d75bb;
         --blue-3: 	#5D9CEC;
+		--red-0:	#ff0000;
     }
     html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -30,7 +32,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -60,7 +61,7 @@ html, body, #root {
 	width: 100%;
 	height: 100%;
 	background: var(--white-1);
-	font-family: 'SourceSansPro';
+	font-family: 'Source Sans Pro';
 }
 #root {
 	display: flex;
