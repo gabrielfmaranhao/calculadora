@@ -1,4 +1,4 @@
-import { Container, BoxInput, BoxForm } from "./style";
+import { Container, BoxInput, BoxForm, BoxResponse } from "./style";
 import Text from "../components/Text";
 import Input from "../components/Input";
 import { useState } from "react";
@@ -9,18 +9,19 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import { validationForm } from "../utils/validations";
 import { toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Button from "../components/Button";
 
 
 const Home = () => {
     const [response, setResponse] = useState<IValuesResponse>()
     const {register, handleSubmit, formState:{errors}} = useForm<IRequestApi>({resolver: yupResolver(validationForm)})
+    
     const postApi = async (value:IRequestApi) => {
         try {
             const {data} = await api.post("", value)
             setResponse(data)
         } catch (error) {
             console.log(error)
-            toast.error("erro")
         }
     }
     return(
@@ -44,26 +45,33 @@ const Home = () => {
                         <Input type="text" placeholder="2" values="mdr" register={register} border_color={errors.mdr ? "red-0": "gray-2"}/>
                         {errors.mdr?.message && <Text color="red-0" element="span" li_Heigt={10} size={12} title={errors.mdr.message}/>}
                     </div>
-                    <button type="submit"> Submit </button>
+                    <Button type="submit" background="blue-2" color="white-1" text="Submit"/>
                 </BoxForm>
             </BoxInput>
-            
-            <div className="response">
-                {response ? 
-                <Text element="h3" li_Heigt={20} size={16} color="blue-3" title="VOCÊ RECEBERÁ:"/> 
+            {response ?
+            <BoxResponse className="response">
+                <Text element="h3" li_Heigt={20} size={16} color="blue-2" title="VOCÊ RECEBERÁ:"/>
+                <ul>
+                    <li>
+                        <Text element="p" color="blue-3" size={16} title={`Amanhã :`} li_Heigt={20}/>
+                        <strong>{`R$ ${response[1]},00`}</strong>
+                    </li>
+                    <li>
+                        <Text element="p" color="blue-3" size={16} title={`Em 15 dias:`} li_Heigt={20}/>
+                        <strong>{`R$ ${response[15]},00`}</strong>
+                    </li>
+                    <li>
+                        <Text element="p" color="blue-3" size={16} title={`Em 30 dias:`} li_Heigt={20}/>
+                        <strong>{`R$ ${response[30]},00`}</strong>
+                    </li>
+                    <li>
+                        <Text element="p" color="blue-3" size={16} title={`Em 90 dias:`} li_Heigt={20}/>
+                        <strong>{`R$ ${response[90]},00`}</strong>
+                    </li>
+                </ul>
+            </BoxResponse>
                 :
                 <Text element="span" color="gray-1" size={16} li_Heigt={20} title="Nenhuma consulta feita"/>}
-            </div>
-            <ToastContainer position="top-right"
-                            autoClose={3000}
-                            hideProgressBar={false}
-                            newestOnTop={false}
-                            closeOnClick
-                            rtl={false}
-                            pauseOnFocusLoss
-                            draggable
-                            pauseOnHover
-                            theme="colored" />
         </Container>
     )
 }

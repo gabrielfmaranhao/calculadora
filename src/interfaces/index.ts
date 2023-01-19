@@ -1,3 +1,5 @@
+import { ButtonHTMLAttributes } from "react"
+
 export interface ITextStylesProps {
     size: number
     color: "white-1" | "white-2" | "gray-1" | "gray-0" | "black" | "blue-0" | "blue-1" | "blue-2" | "blue-3"| "red-0"
@@ -23,4 +25,10 @@ export interface IRequestApi {
 
 export interface IInputStyle {
     border_color: "red-0" | "gray-2"
+}
+
+export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    text: string
+    background: "white-1" | "white-2" | "gray-1" | "gray-0" | "black" | "blue-0" | "blue-1" | "blue-2" | "blue-3"| "red-0"
+    color: "white-1" | "white-2" | "gray-1" | "gray-0" | "black" | "blue-0" | "blue-1" | "blue-2" | "blue-3"| "red-0"
 }

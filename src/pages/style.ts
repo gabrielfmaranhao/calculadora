@@ -4,7 +4,6 @@ export const Container = styled.main`
     background: var(--white-2);
     display: flex;
     flex-direction: column;
-    padding: 1.25rem;
     align-items: center;
     gap: 1.25rem;
     box-sizing: border-box;
@@ -12,14 +11,15 @@ export const Container = styled.main`
     width: 80%;
     max-width: 25rem;
     min-width: 16.75rem;
-    
+    padding: 1rem;
 `
 export const BoxInput = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    width: 100%;
+    width: 80%;
+    /* padding: 1rem; */
 `
 export const BoxForm = styled.form`
     display: flex;
@@ -37,4 +37,27 @@ export const BoxForm = styled.form`
         width: 100%;
     }
     
+`
+export const BoxResponse = styled.div`
+    background: var(--blue-1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10rem;
+    gap: 10px;
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    li{
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        justify-content: space-between;
+        strong {
+            color: var(--blue-2);
+        }
+    }
 `
