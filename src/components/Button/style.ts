@@ -1,9 +1,6 @@
 import styled from "styled-components";
+import { IButtonStyles } from "../../interfaces";
 
-interface IButtonStyles {
-    background: string
-    color: string
-}
 
 export const ButtonStyle = styled.button`
     background: ${({background}:IButtonStyles) => `var(--${background})`};

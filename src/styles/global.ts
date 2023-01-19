@@ -68,6 +68,12 @@ html, body, #root {
 	justify-content: center;
 	align-items: center;
 }
+.motion-div {
+	width: 80%;
+}
+.motion-div-response {
+	width: 100%;
+}
 
 
 `

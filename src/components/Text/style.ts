@@ -6,6 +6,7 @@ export const H1 = styled.h1`
     color: ${({color}:ITextStylesProps) => `var(--${color})`};
     line-height: ${({li_Heigt}:ITextStylesProps) => `${li_Heigt}px`};
     text-align: center;
+    
 `
 
 export const H2 = styled.h2`

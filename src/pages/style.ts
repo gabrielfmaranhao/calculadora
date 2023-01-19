@@ -5,13 +5,12 @@ export const Container = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
+    /* gap: 1.25rem; */
     box-sizing: border-box;
     border: 1px solid var(--blue-0);
-    width: 80%;
+    width: 100%;
     max-width: 25rem;
     min-width: 16.75rem;
-    padding: 1rem;
 `
 export const BoxInput = styled.div`
     display: flex;
@@ -19,7 +18,7 @@ export const BoxInput = styled.div`
     align-items: center;
     gap: 20px;
     width: 80%;
-    /* padding: 1rem; */
+    padding: 1rem;
 `
 export const BoxForm = styled.form`
     display: flex;
@@ -50,12 +49,14 @@ export const BoxResponse = styled.div`
         display: flex;
         flex-direction: column;
         gap: 15px;
+        width: 100%;
     }
     li{
         display: flex;
         gap: 5px;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        width: 100%;
         strong {
             color: var(--blue-2);
         }
