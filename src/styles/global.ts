@@ -80,7 +80,7 @@ html, body, #root {
 @media screen and (min-width: 630px) {
 		.motion-div {
 			max-width: 40rem;
-			height: 20rem;
+			height: 22rem;
 		}
         .motion-div-response {
 			width: 50%;

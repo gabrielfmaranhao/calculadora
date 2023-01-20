@@ -11,7 +11,6 @@ export const Container = styled.main`
 
     @media screen and (min-width: 630px) {
         flex-direction: row;
-
     }
 `
 export const BoxInput = styled.div`

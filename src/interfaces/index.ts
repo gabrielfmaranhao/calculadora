@@ -7,7 +7,7 @@ export interface ITextStylesProps {
 }
 export interface ITextProps extends ITextStylesProps {
     title: string | undefined
-    element: "h1" | "h2" | "h3" | "p" | "label" | "span"
+    element?: "h1" | "h2" | "h3" | "p" | "label" | "span"
 }
 
 
