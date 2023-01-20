@@ -8,8 +8,7 @@ export const InputStyle = styled.input`
     border-radius: 4px;
     height: 2rem;
     outline: none;
-    padding-left: 15px;
-    width: 93%;
+    padding-left: 20px;
     :focus {
         border: 1px solid var(--blue-2);
     }

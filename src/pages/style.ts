@@ -5,58 +5,64 @@ export const Container = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* gap: 1.25rem; */
     box-sizing: border-box;
     border: 1px solid var(--blue-0);
     width: 100%;
-    max-width: 25rem;
-    min-width: 16.75rem;
+
+    @media screen and (min-width: 630px) {
+        flex-direction: row;
+
+    }
 `
 export const BoxInput = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    width: 80%;
-    padding: 1rem;
+    width: 100%;
+    padding: 10px 5px 0px 5px ;
+    @media screen and (min-width: 630px) {
+        padding-right: 0;
+        height: 100%;
+        width: 61%;
+    }
 `
 export const BoxForm = styled.form`
     display: flex;
     flex-direction: column;
-    gap: 10px;
     align-items: center;
-    width: 100%;
+    width: 80%;
+    row-gap: 10px;
     span {
         display: block;
     }
     .box-label {
         display: flex;
         flex-direction: column;
-        gap: 5px;
         width: 100%;
+        row-gap: 5px;
     }
     
 `
 export const BoxResponse = styled.div`
-    background: var(--blue-1);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
     height: 10rem;
-    gap: 10px;
     ul {
         display: flex;
         flex-direction: column;
-        gap: 15px;
-        width: 100%;
+        align-items: flex-end;
+        height: 130px;
+        justify-content: space-around;
     }
     li{
         display: flex;
         gap: 5px;
         align-items: center;
         justify-content: center;
-        width: 100%;
         strong {
             color: var(--blue-2);
         }

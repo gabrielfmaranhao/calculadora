@@ -70,11 +70,26 @@ html, body, #root {
 }
 .motion-div {
 	width: 80%;
+	display: flex;
+	justify-content: center;
 }
 .motion-div-response {
 	width: 100%;
+	background: var(--blue-1);
 }
-
-
+@media screen and (min-width: 630px) {
+		.motion-div {
+			max-width: 40rem;
+			height: 20rem;
+		}
+        .motion-div-response {
+			width: 50%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			background: var(--blue-1);
+			justify-content: center;
+		}
+    }
 `
 export default Global

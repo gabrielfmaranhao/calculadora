@@ -9,5 +9,5 @@ export const ButtonStyle = styled.button`
     height: 2.6rem;
     width: 100%;
     border: none;
-    padding: 0 11px;
+    /* padding: 0 11px; */
 `
