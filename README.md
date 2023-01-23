@@ -15,7 +15,5 @@ Projeto consiste em saber quanto custa antecipar uma transação, e para isso, p
 <p><b>OBS:</b> Lembrando que o valor não pode ser menor que 0 e nem maior que 100.</p>
 <h3>Passo 4:</h3>
 <p>Clicar no botão <b>submit</b> e aguardar o resultado.</p>
-<h3>Passo 5:</h3>
-<p>Caso necessário informe os dias da antecipação.</p>
-<p><b>OBS:</b> Campo não obrigatório!</p>
+
 
