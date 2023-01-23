@@ -25,21 +25,26 @@ export interface IButtonStyles {
 
 export interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     register: UseFormRegister<IRequestApi>
-    values: "amount" | "installments" | "mdr"
+    values: "amount" | "installments" | "mdr" 
     border_color: "red-0" | "gray-2"
 }
     export interface IInputStyle {
         border_color: "red-0" | "gray-2"
     }
 export interface IValuesResponse {
-    1: number
-    15: number
-    30: number
-    90: number
+    1: number 
+    15: number  
+    30: number 
+    90: number 
 }
 
 export interface IRequestApi {
     amount: number
     installments: number
     mdr: number
+}
+
+export interface IPaymontProps {
+    days: string
+    valor: number | unknown[]
 }

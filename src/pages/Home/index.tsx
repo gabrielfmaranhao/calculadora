@@ -12,15 +12,16 @@ import "react-toastify/dist/ReactToastify.css";
 import Button from "../../components/Button";
 import { motion } from "framer-motion";
 import { AxiosError } from "axios";
+import Paymont from "../../components/Paymont";
+
 
 const Home = () => {
   const [response, setResponse] = useState<IValuesResponse>();
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm<IRequestApi>({ resolver: yupResolver(validationForm) });
-
   const postApi = async (value: IRequestApi) => {
     try {
       await toast.promise(
@@ -163,7 +164,7 @@ const Home = () => {
             className="motion-div-response"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
           >
             <BoxResponse className="response">
               <Text
@@ -174,46 +175,9 @@ const Home = () => {
                 title="VOCÊ RECEBERÁ:"
               />
               <ul>
-                <li>
-                  <Text
-                    element="p"
-                    color="blue-3"
-                    size={16}
-                    title={`Amanhã :`}
-                    li_Heigt={20}
-                  />
-                  <strong>{`R$ ${response[1]},00`}</strong>
-                </li>
-                <li>
-                  <Text
-                    element="p"
-                    color="blue-3"
-                    size={16}
-                    title={`Em 15 dias:`}
-                    li_Heigt={20}
-                  />
-                  <strong>{`R$ ${response[15]},00`}</strong>
-                </li>
-                <li>
-                  <Text
-                    element="p"
-                    color="blue-3"
-                    size={16}
-                    title={`Em 30 dias:`}
-                    li_Heigt={20}
-                  />
-                  <strong>{`R$ ${response[30]},00`}</strong>
-                </li>
-                <li>
-                  <Text
-                    element="p"
-                    color="blue-3"
-                    size={16}
-                    title={`Em 90 dias:`}
-                    li_Heigt={20}
-                  />
-                  <strong>{`R$ ${response[90]},00`}</strong>
-                </li>
+                {Object.keys(response).map((value, index) => {
+                    return <Paymont key={value} days={value} valor={response && Object.values(response)[index]}/>
+                })}
               </ul>
             </BoxResponse>
           </motion.div>
